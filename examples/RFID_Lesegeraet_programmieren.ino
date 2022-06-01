@@ -30,7 +30,7 @@ void loop()
 
     if (Zwischenspeicher == 0x02) {                                      
       Zaehler = 0;                                                    
-      clear_card_value();                                           /
+      clear_card_value();                                           
     }
 
     else if (Zwischenspeicher == 0x03) {             
@@ -60,3 +60,4 @@ void clear_card_value() {
 
     Karten_ID[i] = NULL;
   }
+} 
