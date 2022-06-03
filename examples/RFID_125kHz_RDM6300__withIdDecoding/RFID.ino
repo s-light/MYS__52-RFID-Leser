@@ -2,13 +2,15 @@
 RDM6300-125KHz-RFID
 
 based on www.mschoeffler.de Arduino Examples
+https://mschoeffler.com/2018/01/05/arduino-tutorial-how-to-use-the-rdm630-rdm6300-rfid-reader/
 
 modified on 20 Jan 2020
 by Amir Mohammad Shojaee @ Electropeak
 https://electropeak.com/learn/interfacing-rdm6300-125khz-rfid-reader-module-with-arduino/
 
 20220531 s-light.eu stefan krüger
-extracted RFID code into extra file some light tweaks.
+extracted RFID code into extra file and some light tweaks.
+https://github.com/s-light/MYS__52-RFID-Leser/blob/master/examples/RFID_125kHz_RDM6300__withIdDecoding/RFID_125kHz_RDM6300__withIdDecoding.ino
 */
 
 const int BUFFER_SIZE = 14; // RFID DATA FRAME FORMAT: 1byte head (value: 2), 10byte data (2byte version + 8byte tag), 2byte checksum, 1byte tail (value: 3)
