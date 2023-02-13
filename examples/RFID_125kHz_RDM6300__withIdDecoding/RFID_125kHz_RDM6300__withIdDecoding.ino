@@ -7,24 +7,15 @@
   by Amir Mohammad Shojaee @ Electropeak
   https://electropeak.com/learn/interfacing-rdm6300-125khz-rfid-reader-module-with-arduino/
 
-  20220531 s-light.eu stefan krüger
+  20230213 s-light.eu stefan krüger
     extracted RFID code into extra file.
 */
 
-#include <SoftwareSerial.h>
-
-SoftwareSerial ssrfid = SoftwareSerial(2, 3);
-
-// include our special RFID-handling & decoding
-// must be included after the `ssrfi` definition as this is used inthere..
 #include "RFID.h"
 
 
 void setup() {
   Serial.begin(115200);
-
-  ssrfid.begin(9600);
-  ssrfid.listen();
 
   Serial.println("RFID_125kHz_RDM6300__withIdDecoding.ino");
   Serial.println("INIT DONE");

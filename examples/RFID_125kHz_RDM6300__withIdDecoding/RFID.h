@@ -23,10 +23,16 @@ uint8_t buffer[BUFFER_SIZE]; // used to store an incoming data frame
 int buffer_index = 0;
 
 
+#include <SoftwareSerial.h>
+
+SoftwareSerial ssrfid = SoftwareSerial(2, 3);
+
+
 // ******************************************
 // declare functions
 // this way we are free in the implementation order...
 
+void RFID_setup();
 int32_t RFID_update(bool detailed_output = false);
 int32_t extract_tag(bool detailed_output = false);
 int32_t hexstr_to_value(char *str, unsigned int length);
@@ -34,6 +40,11 @@ int32_t hexstr_to_value(char *str, unsigned int length);
 
 // ******************************************
 // implementation
+
+void RFID_setup(void) {
+  ssrfid.begin(9600);
+  ssrfid.listen();
+}
 
 int32_t RFID_update(bool detailed_output = false) {
     // returns tag id if tag is read. otherwise -1
