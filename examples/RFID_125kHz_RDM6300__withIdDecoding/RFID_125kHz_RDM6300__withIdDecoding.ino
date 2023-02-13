@@ -10,9 +10,14 @@
   20220531 s-light.eu stefan krüger
     extracted RFID code into extra file.
 */
+
 #include <SoftwareSerial.h>
 
 SoftwareSerial ssrfid = SoftwareSerial(2, 3);
+
+// include our special RFID-handling & decoding
+// must be included after the `ssrfi` definition as this is used inthere..
+#include "RFID.h"
 
 
 void setup() {

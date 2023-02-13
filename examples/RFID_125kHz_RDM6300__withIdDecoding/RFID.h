@@ -23,6 +23,18 @@ uint8_t buffer[BUFFER_SIZE]; // used to store an incoming data frame
 int buffer_index = 0;
 
 
+// ******************************************
+// declare functions
+// this way we are free in the implementation order...
+
+int32_t RFID_update(bool detailed_output = false);
+int32_t extract_tag(bool detailed_output = false);
+int32_t hexstr_to_value(char *str, unsigned int length);
+
+
+// ******************************************
+// implementation
+
 int32_t RFID_update(bool detailed_output = false) {
     // returns tag id if tag is read. otherwise -1
     int32_t tag = -1;
