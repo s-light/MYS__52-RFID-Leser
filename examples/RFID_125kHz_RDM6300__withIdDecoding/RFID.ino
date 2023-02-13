@@ -54,7 +54,7 @@ int32_t RFID_update(bool detailed_output = false) {
             }
 
             if (call_extract_tag == true) {
-                if (buffer_index == BUFFER_SIZE) {
+                if (buffer_index == (BUFFER_SIZE - 2) ) {
                     tag = extract_tag(detailed_output);
                 } else { // something is wrong... start again looking for preamble (value: 2)
                     buffer_index = 0;
