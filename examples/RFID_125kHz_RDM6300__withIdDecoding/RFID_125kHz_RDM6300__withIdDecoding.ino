@@ -18,6 +18,7 @@ void setup() {
   Serial.begin(115200);
 
   Serial.println("RFID_125kHz_RDM6300__withIdDecoding.ino");
+  RFID_setup();
   Serial.println("INIT DONE");
 }
 
